@@ -1,0 +1,128 @@
+<thf-page-default
+  [t-actions]="isPageEdit ? editLeilaoActions : newLeilaoActions"
+  [t-breadcrumb]="isPageEdit ? editLeilaoBreadcrumb : newLeilaoBreadcrumb"
+  [t-title]="isPageEdit ? literals?.editLeilao : literals?.addNewLeilao">
+
+  <div class="thf-row">
+    <div class="thf-lg-6 thf-offset-lg-3 thf-xl-6 thf-offset-xl-3">
+      <form #formUser="ngForm">
+        <div class="thf-row">
+          <thf-input
+            class="thf-md-12"
+            name="name"
+            [(ngModel)]="leilao.name"
+            t-clean
+            [t-label]="literals?.name"
+            t-minlength="3"
+            t-placeholder="Insira o Nome"
+            t-required>
+          </thf-input>
+          <thf-email
+            class="thf-md-6"
+            name="email"
+            [(ngModel)]="leilao.email"
+            t-clean
+            [t-label]="literals?.email"
+            t-placeholder="Insira o Email"
+            t-required>
+          </thf-email>
+          <thf-input
+            class="thf-md-6"
+            name="phone"
+            [(ngModel)]="leilao.phone"
+            t-clean
+            [t-label]="literals?.phone"
+            t-placeholder="Insira o Telefone"
+            t-mask="(99) 99999?-9999"
+            t-required>
+          </thf-input>
+        </div>
+
+        <div class="thf-row">
+          <thf-datepicker
+            class="thf-md-6"
+            name="inicioLeilao"
+            [(ngModel)]="leilao.inicioLeilao"
+            t-format="dd/mm/yyyy"
+            [t-label]="literals?.inicioLeilao">
+          </thf-datepicker>
+          <thf-datepicker
+          class="thf-md-6"
+          name="fimLeilao"
+          [(ngModel)]="leilao.fimLeilao"
+          t-format="dd/mm/yyyy"
+          [t-label]="literals?.fimLeilao">
+        </thf-datepicker>
+        </div>
+
+        <div class="thf-row">
+          <thf-textarea
+            class="thf=md-20"
+            name="description"
+            [(ngModel)]="leilao.description"
+            [t-label]="literals.description"
+            [ngModelOptions]="{standalone: true}">
+          </thf-textarea>
+        </div>
+
+        <div class="thf-row">
+          <thf-select
+            class="thf-md-6"
+            name="status"
+            [(ngModel)]="leilao.status"
+            [t-label]="literals?.status"
+            [t-options]="statusOptions">
+          </thf-select>
+        </div>
+
+        <div class="thf-row">
+          <div class="thf-md-12">
+            <thf-checkbox-group
+              name="personality"
+              [(ngModel)]="leilao.personality"
+              [t-label]="literals?.personality"
+              [t-options]="personalityOptions">
+            </thf-checkbox-group>
+          </div>
+        </div>
+
+        <div class="thf-row">
+          <thf-lookup
+            class="thf-md-6"
+            name="lookup"
+            [(ngModel)]="leilao.lookup"
+            t-field-label="nickname"
+            t-field-value="nickname"
+            t-help="Select favorite spaceship"
+            t-label="Hero"
+            t-title="Favorite spaceship"
+            [t-columns]="columns"
+            [t-filter-service]="lookupService"
+            [t-placeholder]="literals?.insertValue">
+        </thf-lookup>
+        </div>
+      </form>
+    </div>
+  </div>
+</thf-page-default>
+
+<thf-modal #modalDeleteLeilao
+  t-close
+  t-size="sm"
+  [t-title]="literals?.modalDeleteTitle"
+  [t-primary-action]="confirmDeleteAction"
+  [t-secondary-action]="returnAction">
+
+  <div class="thf-font-text-large thf-text-left">{{ literals?.modalDeleteMessage | thfI18n:[leilao.name] }}</div>
+</thf-modal>
+
+<thf-modal #modalCancelEditLeilao
+  t-close
+  t-size="sm"
+  [t-title]="literals?.modalCancelEditLeilaoTitle"
+  [t-primary-action]="confirmReturnToListAction"
+  [t-secondary-action]="returnAction">
+
+  <div class="thf-font-text-large thf-text-left">{{ literals?.modalCancelEditLeilaoMessage | thfI18n:[leilao.name] }}</div>
+</thf-modal>
+
