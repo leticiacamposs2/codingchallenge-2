@@ -17,12 +17,26 @@
             t-placeholder="Insira o Nome"
             t-required>
           </thf-input>
+
+          <div class="thf-row">
+              <thf-upload
+                class="thf-md-12"
+                name="photo_url"
+                [(ngModel)]="leilao.photo_url"
+                t-help="Maximum file size limit: 300kb"
+                t-label="literals?.photo_url"
+                t-required
+                t-restrictions="{maxSize: 300}"
+                t-url="https://thf.totvs.com.br/sample/api/uploads/addFile">
+              </thf-upload>
+            </div>
+
           <thf-email
             class="thf-md-6"
-            name="email"
-            [(ngModel)]="leilao.email"
+            name="base_price"
+            [(ngModel)]="leilao.base_price"
             t-clean
-            [t-label]="literals?.email"
+            [t-label]="literals?.base_price"
             t-placeholder="Insira o Email"
             t-required>
           </thf-email>
@@ -30,7 +44,7 @@
             class="thf-md-6"
             name="phone"
             [(ngModel)]="leilao.phone"
-            t-clean
+            t-cleanf
             [t-label]="literals?.phone"
             t-placeholder="Insira o Telefone"
             t-mask="(99) 99999?-9999"

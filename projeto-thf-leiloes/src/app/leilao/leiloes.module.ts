@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { ThfModule } from '@totvs/thf-ui';
+import { ThfFieldModule } from '@totvs/thf-ui/components/thf-upload';
 
 import { LeiloesComponent } from './leiloes.component';
 import { LeilaoLookupService } from '../services/leilao-lookup.service';
@@ -16,6 +17,7 @@ import { LeilaoFormGroupService } from '../services/leilao-form-group-service';
   imports: [
     CommonModule,
     ThfModule,
+    ThfFieldModule,
     FormsModule,
     HttpClientModule,
     RouterModule
