@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 
 import { ThfStorageService } from '@totvs/thf-storage';
 
-import { GenericService } from '../services/generic-service';
 import { User } from '../model/user';
+import { GenericService } from './generic-service';
 
 @Injectable()
 export class LoginService extends GenericService<User> {

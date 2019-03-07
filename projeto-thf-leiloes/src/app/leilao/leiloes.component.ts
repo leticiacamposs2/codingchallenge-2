@@ -198,14 +198,16 @@ export class LeiloesComponent implements OnDestroy, OnInit {
     this.columns = [
       { column: 'id', label: this.literals['code'], type: 'string' },
       { column: 'name', label: this.literals['name'] , type: 'link', action: (value, row) => this.editLeilao(row) },
-      { column: 'email', label: this.literals['email'], type: 'string' },
-      { column: 'phone', label: this.literals['phone'], type: 'string' },
+      { column: 'photo_url', label: this.literals['photo_url'], type: 'string' },
+      { column: 'bid_type', label: this.literals['bid_type'], type: 'number' },
+      { column: 'bid_step', label: this.literals['bid_step'], type: 'number' },
       { column: 'status', label: this.literals['status'], type: 'label', width: '10%', labels: [
-        { value: 'cloud', color: 'success', label: 'Cloud-Riders' },
-        { value: 'crimson', color: 'warning', label: 'Crimson Dawn' },
-        { value: 'galactic', color: 'success', label: 'Galactic' },
-        { value: 'pyke', color: 'danger', label: 'Pyke Syndicate' }
+        { value: '0', color: 'danger', label: 'Rascunho' },
+        { value: '1', color: 'warning', label: 'Ativo' },
+        { value: '2', color: 'sucess', label: 'Finalizado' },
       ]},
+      { column: 'owner', label: this.literals['owner'], type: 'string' },
+      { column: 'expirationDate', label: this.literals['expirationDate'], type: 'Date' },
     ];
 
     this.breadcrumb = {

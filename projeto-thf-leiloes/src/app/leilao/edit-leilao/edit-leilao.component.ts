@@ -1,14 +1,14 @@
-import { OnDestroy, OnInit, ViewChild, Component } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { NgForm } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
 import { ThfModalAction } from '@totvs/thf-ui/components/thf-modal';
 import { ThfModalComponent } from '@totvs/thf-ui/components/thf-modal/thf-modal.component';
 import { ThfPageAction } from '@totvs/thf-ui/components/thf-page';
-import { ThfSelectOption, ThfLookupColumn } from '@totvs/thf-ui';
+import { ThfLookupColumn, ThfSelectOption } from '@totvs/thf-ui/components/thf-field';
 import { ThfBreadcrumb } from '@totvs/thf-ui/components/thf-breadcrumb/thf-breadcrumb.interface';
 import { ThfNotificationService } from '@totvs/thf-ui/services/thf-notification/thf-notification.service';
 import { ThfI18nService } from '@totvs/thf-ui/services/thf-i18n';
@@ -16,6 +16,8 @@ import { ThfI18nService } from '@totvs/thf-ui/services/thf-i18n';
 import { Leilao } from './../../entity/leilao';
 import { LeiloesService } from '../../services/leiloes.service';
 import { LeilaoFormGroupService } from '../../services/leilao-form-group-service';
+import { LeilaoLookupService } from '../../services/leilao-lookup.service';
+
 
 @Component({
   selector: 'app-edit-leilao',
@@ -28,11 +30,11 @@ export class EditLeilaoComponent implements OnInit, OnDestroy {
   confirmReturnToListAction: ThfModalAction;
   returnAction: ThfModalAction;
 
-  editLeilaoBreadcrumb: ThfBreadcrumb;
-  newLeilaoBreadcrumb: ThfBreadcrumb;
+  editUserBreadcrumb: ThfBreadcrumb;
+  newUserBreadcrumb: ThfBreadcrumb;
 
-  editLeilaoActions: Array<ThfPageAction>;
-  newLeilaoActions: Array<ThfPageAction>;
+  editUserActions: Array<ThfPageAction>;
+  newUserActions: Array<ThfPageAction>;
 
   leilao: Leilao = new Leilao();
   literals = {};
@@ -43,10 +45,13 @@ export class EditLeilaoComponent implements OnInit, OnDestroy {
     { column: 'label', label: 'Name' }
   ];
 
-  readonly status: Array<ThfSelectOption> = [
-      { label: 'Rascunho', value: 'rascunho' },
-      { label: 'Ativo', value: 'ativo' },
-      { label: 'Finalizado', value: 'finalizado' },
+  readonly bidtypeOptions: Array<ThfSelectOption> = [
+    { label: 'free', value: '1' },
+    { label: 'fixed', value: '2' },
+  ];
+
+  readonly bidstepOptions: Array<ThfSelectOption> = [
+      { label: 'Rascunho', value: '2' },
   ];
 
   private literalsSubscription: Subscription;
@@ -62,6 +67,7 @@ export class EditLeilaoComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private thfI18Service: ThfI18nService,
     private thfNotification: ThfNotificationService,
+    public lookupService: LeilaoLookupService,
     private router: Router,
   ) { }
 
@@ -128,26 +134,26 @@ export class EditLeilaoComponent implements OnInit, OnDestroy {
         label: this.literals['yes'], action: () => this.location.back()
       };
 
-      this.editLeilaoActions = [
+      this.editUserActions = [
         { label: this.literals['saveLeilao'], action: this.updateLeilao.bind(this, this.leilao), icon: 'thf-icon-plus'},
         { label: this.literals['return'], action: this.checkLeilaoInterationOnForm.bind(this, this.formLeilao) },
         { label: this.literals['print'], action: () => alert('Imprimir') },
         { label: this.literals['remove'], action: () => this.modalDeleteLeilao.open() },
       ];
 
-      this.editLeilaoBreadcrumb = {
+      this.editUserBreadcrumb = {
         items: [
           { label: this.literals['leilao'], link: '/leilao'},
           { label: this.literals['editLeilao'], link: '/leilao/edit'},
         ]
       };
 
-      this.newLeilaoActions = [
+      this.newUserActions = [
         { label: this.literals['saveLeilao'], action: this.addLeilao.bind(this, this.leilao), icon: 'thf-icon-plus' },
         { label: this.literals['return'], action: this.checkLeilaoInterationOnForm.bind(this, this.formLeilao) }
       ];
 
-      this.newLeilaoBreadcrumb = {
+      this.newUserBreadcrumb = {
         items: [
           { label: this.literals['leilao'], link: '/leilao' },
           { label: this.literals['addNewLeilao'], link: '/leilao/new-leilao' }
