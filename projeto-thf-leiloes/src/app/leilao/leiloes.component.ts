@@ -117,7 +117,7 @@ export class LeiloesComponent implements OnDestroy, OnInit {
   }
 
   private editLeilao(leilao: Leilao) {
-    this.router.navigate(['/edit', leilao.id]);
+    this.router.navigate(['/edit-leilao', leilao.id]);
   }
 
   private filter() {
@@ -184,7 +184,7 @@ export class LeiloesComponent implements OnDestroy, OnInit {
     };
 
     this.pageActions = [
-      { label: this.literals['addNewLeilao'], action: () => this.router.navigate(['/new-leilao']), icon: 'thf-icon-plus' },
+      { label: this.literals['addNewLeilao'], action: () => this.router.navigate(['edit-leilao']), icon: 'thf-icon-plus' },
       { label: this.literals['print'], action: () => alert('Acao Imprimir')},
       { label: this.literals['export'], action: () => alert('Exportando...')},
       { label: this.literals['remove'], action: () => this.modalDelete.open()},

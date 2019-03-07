@@ -8,11 +8,11 @@ import { LeiloesAbertosComponent } from './leiloes-abertos/leiloes-abertos.compo
 import { LeiloesComponent } from './leilao/leiloes.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'meus-leiloes', component: MeusLeiloesComponent },
   { path: 'leiloes', component: LeiloesComponent },
   { path: 'edit-leilao', component: EditLeilaoComponent },
   { path: 'leiloes-abertos', component: LeiloesAbertosComponent },
-  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

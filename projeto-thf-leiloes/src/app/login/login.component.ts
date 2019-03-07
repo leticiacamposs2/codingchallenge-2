@@ -14,7 +14,7 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent {
 
-  hideRememberUser: boolean = true;
+  hideRememberUser: true;
 
   constructor(
     private loginService: LoginService,
