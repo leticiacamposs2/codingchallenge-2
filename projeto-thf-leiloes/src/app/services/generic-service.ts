@@ -11,12 +11,13 @@ export class GenericService<T> {
 
   path: string;
 
-  private host: 'http://localhost:';
-  private port: 8080;
-  private apiName: '/conference-api/api/v';
+  private usuario;
+  private host: 'http://138.219.88.80:17114';
+  private apiName: '/api/v1/auth/new';
   private version: 1;
+  headers = new Headers();
 
-  private readonly urlApi: string = this.host + this.port + this.apiName + this.version;
+  private readonly urlApi: string = this.host + this.apiName + this.version;
 
   constructor(private http: HttpClient) { }
 

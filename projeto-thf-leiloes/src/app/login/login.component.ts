@@ -23,7 +23,7 @@ export class LoginComponent {
     private thfNotification: ThfNotificationService) { }
 
   loginSubmit(formData: ThfPageLogin) {
-    const user = Object.assign({ username: 'leticia', password: '123' });
+    const user = Object.assign({ email: formData.login, password: formData.password });
 
     this.loginService.postWithPath('login', user).subscribe(() => {
       this.storage.set('isLoggedIn', 'true').then(() => {
@@ -32,14 +32,6 @@ export class LoginComponent {
     }, () => {
       this.thfNotification.error('Invalid username or password. Please try again.');
     });
-
-//    this.loginService.postWithPath('login', user).subscribe(() => {
-//      this.storage.set('isLoggedIn', 'true').then(() => {
-//        this.router.navigate(['/home']);
-//      });
-//    }, () => {
-//      this.thfNotification.error('Invalid username or password. Please try again.');
-//    });
 
   }
 
