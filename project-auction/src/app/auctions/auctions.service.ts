@@ -10,9 +10,10 @@ export class AuctionsService {
   }
 
    public getSketchAuctions() {
-    return this._http.get('/auctions', {
-    status: 0
-   });
+    return this._http.get('/auctions');
+  //   return this._http.get('/auctions', {
+  //   status: 0
+  //  });
   }
 
 }

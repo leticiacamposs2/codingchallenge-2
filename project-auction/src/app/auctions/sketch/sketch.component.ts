@@ -13,10 +13,14 @@ export class SketchComponent implements OnInit {
   constructor(private _auctionsService: AuctionsService) { }
 
   ngOnInit() {
+
     this._auctionsService.getSketchAuctions().subscribe( response => {
       this.sketchAuctions = response;
-    });
 
+      this.sketchAuctions = this.sketchAuctions.filter( filtro => {
+        return filtro.status === 0;
+      });
+    });
   }
 
 }
