@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,11 @@ export class HttpService {
 
   }
 
-  public get(endpoint, params) {
-    return this._http.get(this.URL + endpoint);
+  public get(endpoint: string, queryParams = {}): Observable<any> {
+    const params = new HttpParams({
+      fromObject: queryParams
+    });
+    return this._http.get(this.URL + endpoint, {params});
   }
 
 }
