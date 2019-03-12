@@ -7,7 +7,7 @@ import { AuctionsService } from '../auctions.service';
   styleUrls: ['./sketch.component.scss']
 })
 export class SketchComponent implements OnInit {
-  private sketchAuctions: any = [];
+  public sketchAuctions: any = [];
   public literals = {};
 
   constructor(private _auctionsService: AuctionsService) { }
