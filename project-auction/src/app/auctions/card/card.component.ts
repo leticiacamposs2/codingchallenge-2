@@ -13,6 +13,11 @@ export class CardComponent implements OnInit {
   @Input('t-photo_url') photo;
   @Input('t-bid_type') bid_type;
 
+  public bid_step;
+  @Input('t-bid_step') set formatBidStep(value: number) {
+    this.bid_step = value ? value : '';
+  }
+
   constructor(private _auctionsService: AuctionsService) { }
 
   ngOnInit() { }
