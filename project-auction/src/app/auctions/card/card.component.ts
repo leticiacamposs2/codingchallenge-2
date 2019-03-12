@@ -15,12 +15,9 @@ export class CardComponent implements OnInit {
 
   constructor(private _auctionsService: AuctionsService) { }
 
-  ngOnInit() {
-    console.log(this.name);
-  }
+  ngOnInit() { }
 
   formatBid(type) {
-    debugger;
     return (type === 1) ? 'Lance Livre' : 'Lance Fixo';
   }
 
