@@ -9,7 +9,6 @@ import { AuctionsService } from '../auctions.service';
 })
 export class SketchComponent implements OnInit {
   public sketchAuctions: AuctionsResponse;
-  public sketchAuctionsArr = [];
   public literals = {};
 
   constructor(private _auctionsService: AuctionsService) { }
@@ -19,9 +18,6 @@ export class SketchComponent implements OnInit {
     this._auctionsService.getSketchAuctions().subscribe( response => {
       this.sketchAuctions = response;
 
-      this.sketchAuctionsArr = this.sketchAuctions.auctions.filter( filtro => {
-        return filtro.status === 0;
-      });
     });
   }
 
