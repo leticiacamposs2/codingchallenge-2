@@ -2,8 +2,8 @@
   "auctions": [
     {
       "_id": "5c853501ad331217442f0cca",
-      "name": "Leilão de Bolsas de Gatinho",
-      "photo": "https://http2.mlstatic.com/bolsa-moda-feminina-branca-rosa-gato-miau-delicada-tumblr-D_NQ_NP_820261-MLB26563791190_122017-F.jpg",
+      "name": "Leilão que este ano vou me formar",
+      "photo": "https://cdn.dicionariopopular.com/imagens/meme-da-nazare-confusa-54s.jpg",
       "base_price": 120000,
       "bid_type": 2,
       "bid_step": 12000000,
@@ -16,8 +16,8 @@
     },
     {
       "_id": "5c853501ad331217442f0cca",
-      "name": "Leilão de Carros Totvs",
-      "photo": "https://portalerp.com/images/joomla/AIrobocarro.png",
+      "name": "Leilão de Taubaté",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdGdmFSKVMO0Muad7Tr_g3rb8JzFW2lwciGsiDBKhbD1_XEiecfw",
       "base_price": 130000,
       "bid_type": 1,
       "bid_step": 0,
@@ -30,11 +30,11 @@
     },
     {
       "_id": "5c853501ad331217442f0cca",
-      "name": "Leilão de Celulares Totvs",
-      "photo": "https://www.meliuz.com.br/blog/wp-content/uploads/2018/05/como-comprar-celular-novoousado-1.jpg",
-      "base_price": 150000,
+      "name": "Leilão de 3 Reaix",
+      "photo": "https://i.ytimg.com/vi/Zoq8LqGj47k/maxresdefault.jpg",
+      "base_price": 3,
       "bid_type": 2,
-      "bid_step": 15000000,
+      "bid_step": 3,
       "status": 1,
       "owner": "SP01\\william.lima",
       "bids": [],
@@ -44,8 +44,8 @@
     },
     {
       "_id": "5c853501ad331217442f0cca",
-      "name": "Leilão de Carros Tesla",
-      "photo": "https://66.media.tumblr.com/6034630b39f35f7f9abad291f94f43b9/tumblr_ozjs7lH8kf1ti77kbo5_500.jpg",
+      "name": "Leilão da Felicidade",
+      "photo": "https://i.pinimg.com/originals/8f/ff/03/8fff03b5f28ac8d1095f618ff78bedcc.png",
       "base_price": 150000,
       "bid_type": 2,
       "bid_step": 15000000,
