@@ -1,3 +1,4 @@
+import { LiteralService } from './../i18n/literal.service';
 import { Component, OnInit } from '@angular/core';
 import { AuctionsService } from '../auctions/auctions.service';
 
@@ -8,7 +9,14 @@ import { AuctionsService } from '../auctions/auctions.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _auctionService: AuctionsService) { }
+  public literals = {};
+
+  constructor(
+    private _auctionService: AuctionsService,
+    private literalService: LiteralService
+    ) {
+      this.literals = this.literalService.literals;
+    }
 
   ngOnInit() {
   }

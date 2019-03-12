@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SketchComponent implements OnInit {
 
+  public literals = {};
+
   constructor() { }
 
   ngOnInit() {
