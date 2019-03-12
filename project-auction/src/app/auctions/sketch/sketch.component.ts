@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuctionsService } from '../auctions.service';
+
 @Component({
   selector: 'app-sketch',
   templateUrl: './sketch.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SketchComponent implements OnInit {
 
-  constructor() { }
+  public sketchAuctions: any;
+
+  constructor(private _auctionsService: AuctionsService) { }
 
   ngOnInit() {
+    this._auctionsService.getAllAuctions()
+    .subscribe(res => {
+      this.sketchAuctions = res;
+    });
   }
 
 }

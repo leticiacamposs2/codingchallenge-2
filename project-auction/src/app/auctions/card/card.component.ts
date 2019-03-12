@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,11 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  public aCards = [1, 2, 3, 4, 5, 6, 7, 8];
+  @Input('t-name') name;
+  @Input('t-base_price') base_price;
+  @Input('t-photo') photo;
+  @Input('t-bid_type') bid_type;
+  @Input('t-bid_step') bid_step;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  formatBid(type) {
+    return (type === 1) ? 'Lance Livre' : 'Lance Fixo';
   }
 
 }
