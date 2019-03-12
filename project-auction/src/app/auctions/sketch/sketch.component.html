@@ -2,5 +2,9 @@
   <h2 class="subtitle">Rascunho</h2>
 </div>
 <div *ngFor="let auction of sketchAuctions">
-  <app-card [t-name]="auction.name"></app-card>
+  <app-card
+  [t-name]="auction.name"
+  [t-base_price]="auction.base_price"
+  >
+</app-card>
 </div>

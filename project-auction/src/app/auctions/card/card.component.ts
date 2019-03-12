@@ -9,6 +9,7 @@ import { AuctionsService } from '../auctions.service';
 export class CardComponent implements OnInit {
 
   @Input('t-name') name;
+  @Input('t-base_price') base_price;
 
   public arrCards = [1, 2, 3, 4, 5, 6, 7, 8];
 
