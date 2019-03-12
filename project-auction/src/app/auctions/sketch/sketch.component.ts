@@ -1,3 +1,4 @@
+import { AuctionsResponse } from './../auction';
 import { Component, OnInit } from '@angular/core';
 import { AuctionsService } from '../auctions.service';
 
@@ -7,7 +8,8 @@ import { AuctionsService } from '../auctions.service';
   styleUrls: ['./sketch.component.scss']
 })
 export class SketchComponent implements OnInit {
-  public sketchAuctions: any;
+  public sketchAuctions: AuctionsResponse;
+  public sketchAuctionsArr = [];
   public literals = {};
 
   constructor(private _auctionsService: AuctionsService) { }
@@ -17,7 +19,7 @@ export class SketchComponent implements OnInit {
     this._auctionsService.getSketchAuctions().subscribe( response => {
       this.sketchAuctions = response;
 
-      this.sketchAuctions = this.sketchAuctions.filter( filtro => {
+      this.sketchAuctionsArr = this.sketchAuctions.auctions.filter( filtro => {
         return filtro.status === 0;
       });
     });
