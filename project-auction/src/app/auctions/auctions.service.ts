@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpService } from '../shared/services/http.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuctionsService {
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpService) {
   }
 
    public getAllAuctions() {
-    return this._http.get('http://localhost:3000/auctions');
+    return this._http.get('/auctions');
    }
 
 }
