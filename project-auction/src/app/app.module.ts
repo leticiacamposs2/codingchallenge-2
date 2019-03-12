@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { SketchComponent } from './auctions/sketch/sketch.component';
 import { MyAuctionsComponent } from './auctions/my-auctions/my-auctions.component';
 import { FinishedAuctionsComponent } from './auctions/finished-auctions/finished-auctions.component';
-import { CardComponent } from './auctions/card/card.component';
 import { SharedModule } from './shared/shared.module';
 
 const i18nConfig: ThfI18nConfig = {
@@ -39,7 +38,6 @@ const i18nConfig: ThfI18nConfig = {
     SketchComponent,
     MyAuctionsComponent,
     FinishedAuctionsComponent,
-    CardComponent
   ],
   imports: [
     BrowserModule,
