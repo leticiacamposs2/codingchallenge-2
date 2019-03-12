@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
 
   public bid_step;
   @Input('t-bid_step') set formatBidStep(value: number) {
-    this.bid_step = value ? value : '';
+    this.bid_step = value || '';
   }
 
   constructor(private _auctionsService: AuctionsService) { }
