@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuctionsService } from '../auctions.service';
 
 @Component({
@@ -7,14 +7,15 @@ import { AuctionsService } from '../auctions.service';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+
+  @Input('t-name') name;
+
   public arrCards = [1, 2, 3, 4, 5, 6, 7, 8];
 
   constructor(private _auctionsService: AuctionsService) { }
 
   ngOnInit() {
-    this._auctionsService.getAllAuctions().subscribe( response => {
-      console.log(response);
-    });
+    console.log(this.name);
   }
 
 }
