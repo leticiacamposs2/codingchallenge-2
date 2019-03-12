@@ -4,13 +4,12 @@
     t-secondary-label="Ativar">
 
     <img
-      src="https://http2.mlstatic.com/bolsa-moda-feminina-branca-rosa-gato-miau-delicada-tumblr-D_NQ_NP_820261-MLB26563791190_122017-F.jpg"
-      class="image-card">
+      src="{{ photo }}" class="image-card">
 
     <div class="container-column">
       <div class="thf-font-text-bold">{{ name }}</div>
       <div class="thf-row container-between">
-        <div class="thf-font-text">Lance fixo : 20 reais</div>
+        <div class="thf-font-text">{{ formatBid(bid_type) }} Lance fixo : 20 reais</div>
         <div class="thf-font-text-bold">{{ base_price }}</div>
       </div>
     </div>

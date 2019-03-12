@@ -10,13 +10,25 @@ export class CardComponent implements OnInit {
 
   @Input('t-name') name;
   @Input('t-base_price') base_price;
-
-  public arrCards = [1, 2, 3, 4, 5, 6, 7, 8];
+  @Input('t-photo_url') photo;
+  @Input('t-bid_type') bid_type;
 
   constructor(private _auctionsService: AuctionsService) { }
 
   ngOnInit() {
     console.log(this.name);
+  }
+
+  formatBid(type) {
+    return (type === 1) ? 'Lance Livre' : 'Lance Fixo';
+
+    // switch(type) {
+    //   case 1:
+    //     return
+    //   case 2:
+    //     return
+    // }
+    // return 'texto';
   }
 
 }
