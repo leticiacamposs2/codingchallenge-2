@@ -20,15 +20,8 @@ export class CardComponent implements OnInit {
   }
 
   formatBid(type) {
+    debugger;
     return (type === 1) ? 'Lance Livre' : 'Lance Fixo';
-
-    // switch(type) {
-    //   case 1:
-    //     return
-    //   case 2:
-    //     return
-    // }
-    // return 'texto';
   }
 
 }
