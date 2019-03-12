@@ -11,8 +11,8 @@ export class HttpService {
 
   }
 
-  public get(endpoint) {
-    this._http.get(URL + endpoint);
+  public get(endpoint, params) {
+    return this._http.get(this.URL + endpoint);
   }
 
 }

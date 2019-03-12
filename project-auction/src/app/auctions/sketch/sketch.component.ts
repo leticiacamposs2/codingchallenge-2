@@ -13,7 +13,7 @@ export class SketchComponent implements OnInit {
   constructor(private _auctionsService: AuctionsService) { }
 
   ngOnInit() {
-    this._auctionsService.getAllAuctions().subscribe( response => {
+    this._auctionsService.getSketchAuctions().subscribe( response => {
       this.sketchAuctions = response;
     });
 

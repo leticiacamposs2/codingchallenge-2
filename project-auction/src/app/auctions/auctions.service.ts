@@ -9,8 +9,10 @@ export class AuctionsService {
   constructor(private _http: HttpService) {
   }
 
-   public getAllAuctions() {
-    return this._http.get('/auctions');
-   }
+   public getSketchAuctions() {
+    return this._http.get('/auctions', {
+    status: 0
+   });
+  }
 
 }
