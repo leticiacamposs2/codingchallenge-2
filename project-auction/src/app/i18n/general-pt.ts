@@ -8,9 +8,7 @@ export const generalPt = {
   free: 'Livre',
   finishedAuctions: 'Leilões Finalizados',
   fixed: 'Fixo',
-  helloWord: 'Olá Mundo',
   myAuctions: 'Meus Leilões',
   myFirstApp: 'Meu primeiro aplicativo com THF!',
-  sketch: 'Rascunho',
   toActivate: 'Ativar'
 };

@@ -1,4 +1,4 @@
-export class Auctions {
+export class Auction {
   public _id: string;
   public name: string;
   public photo: string;

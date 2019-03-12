@@ -1,5 +1,12 @@
-<!--<thf-page-default t-title="Leilões Finalizados">-->
-    <div class="thf-font-display">
-        <h2 class="subtitle">Leilões Finalizados</h2>
-      </div>
-    <!--</thf-page-default>-->
+<div class="thf-font-display">
+  <h2 class="subtitle">{{literals?.name}}</h2>
+</div>
+<div *ngFor="let auction of finished">
+  <app-card
+    [t-name]="auction.name"
+    [t-base_price]="auction.base_price"
+    [t-photo_url]="auction.photo"
+    [t-bid_type]="auction.bid_type"
+    [t-bid_step]="auction.bid_step">
+  </app-card>
+</div>

@@ -8,14 +8,18 @@ import { AuctionsResponse } from './auction';
 })
 export class AuctionsService {
 
-  constructor(private _http: HttpService) {
-  }
+  constructor(private _http: HttpService) { }
 
    public getSketchAuctions(): Observable<AuctionsResponse> {
     return this._http.get('/auctions', {
       status: 0
-   });
+    });
+  }
 
+  public getMyAuctions(): Observable<AuctionsResponse> {
+    return this._http.get('/auctions', {
+      status: 1
+    });
   }
 
 }
