@@ -11,6 +11,7 @@
 
       <thf-decimal
         class="thf-lg-6"
+        formControlName="base_price"
         t-required="true"
         t-label="Preço Base">
       </thf-decimal>
@@ -20,6 +21,7 @@
       <thf-select
         class="thf-lg-6"
         t-required="true"
+        formControlName="bid_type"
         t-label="Tipo de Lance"
         [t-options]="bidTypeOptions">
       </thf-select>
@@ -27,6 +29,7 @@
       <thf-decimal
         class="thf-lg-6"
         t-required="true"
+        formControlName="bid_step"
         t-label="Etapa do Lance">
       </thf-decimal>
     </div>
@@ -35,12 +38,13 @@
       <thf-input
         class="thf-lg-12"
         t-required="true"
+        formControlName="photo"
         t-label="Foto">
       </thf-input>
       </div>
 
       <div class="thf-row">
-        <img src="" width="100%" height="500px">
+        <img [src]="formAuction.get('photo').value" width="100%" height="500px">
       </div>
     </form>
 
