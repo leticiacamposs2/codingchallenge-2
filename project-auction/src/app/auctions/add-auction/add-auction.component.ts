@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThfSelectOption } from '@totvs/thf-ui';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-add-auction',
   templateUrl: './add-auction.component.html',
@@ -10,13 +10,17 @@ export class AddAuctionComponent implements OnInit {
   public bidTypeOptions: Array<ThfSelectOption>;
   public formAuction: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.bidTypeOptions = [
       {label: 'Lance livre', value: 1},
       {label: 'Lance fixo', value: 2}
     ];
+
+    this.formAuction = this.formBuilder.group({
+      name: '',
+    });
   }
 
 }
