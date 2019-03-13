@@ -43,8 +43,8 @@
       </thf-input>
       </div>
 
-      <div class="thf-row">
-        <img [src]="formAuction.get('photo').value" width="100%" height="500px">
+      <div *ngIf="formAuction.get('photo').value" class="thf-row">
+        <img width="100%" height="500px" [src]="formAuction.get('photo').value">
       </div>
     </form>
 
