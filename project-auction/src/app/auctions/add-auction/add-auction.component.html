@@ -1,4 +1,4 @@
-<thf-page-default t-title="Adicionar Leilão" [t-actions]="pageActions" [t-breadcrumb]="pageBreadcrumb">
+<thf-page-edit t-title="Adicionar Leilão" [t-disable-submit]="isFormValid()">
 
   <form [formGroup]="formAuction">
     <div class="thf-row">
@@ -44,4 +44,4 @@
       </div>
     </form>
 
-</thf-page-default>
+</thf-page-edit>

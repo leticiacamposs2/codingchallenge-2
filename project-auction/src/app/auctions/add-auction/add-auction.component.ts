@@ -23,4 +23,13 @@ export class AddAuctionComponent implements OnInit {
     });
   }
 
+  save() {
+    console.log(this.formAuction);
+  }
+
+  isFormValid() {
+    return !this.formAuction.valid;
+    //return this.formAuction.status === 'INVALID' ? true : false;
+  }
+
 }
