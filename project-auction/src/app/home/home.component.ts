@@ -1,6 +1,7 @@
 import { LiteralService } from './../i18n/literal.service';
 import { Component, OnInit } from '@angular/core';
 import { AuctionsService } from '../auctions/auctions.service';
+import { ThfMenuItem } from '@totvs/thf-ui';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { AuctionsService } from '../auctions/auctions.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  public menuAuctions: Array<ThfMenuItem>;
   public literals = {};
 
   constructor(
@@ -19,6 +20,11 @@ export class HomeComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.menuAuctions = [
+      {label: this.literalService.literals['myAuctions'], link: '/'},
+      {label: this.literalService.literals['addAuction'], link: '/'},
+      {label: this.literalService.literals['openAuctions'], link: '/'},
+    ];
   }
 
 }

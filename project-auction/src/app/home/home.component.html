@@ -1,9 +1,15 @@
-<thf-page-default [t-title]="literals?.myAuctions">
+<div class="thf-wrapper">
 
-  <app-sketch></app-sketch>
+  <thf-menu t-filter="false" [t-menus]="menuAuctions">
+  </thf-menu>
 
-  <app-my-auctions></app-my-auctions>
+  <thf-page-default [t-title]="literals?.myAuctions">
 
-  <!-- <app-finished-auctions></app-finished-auctions> -->
+    <app-sketch></app-sketch>
 
-</thf-page-default>
+    <app-my-auctions></app-my-auctions>
+
+    <!-- <app-finished-auctions></app-finished-auctions> -->
+
+  </thf-page-default>
+</div>

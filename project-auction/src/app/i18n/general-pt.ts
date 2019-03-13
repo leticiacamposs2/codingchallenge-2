@@ -1,4 +1,5 @@
 export const generalPt = {
+  addAuction: 'Adicionar Leilão',
   auctionName: 'Nome do Leilão',
   bid_type: 'Tipo de Lance',
   bidFixed: 'Lance Fixo :',
@@ -10,5 +11,6 @@ export const generalPt = {
   fixed: 'Fixo',
   myAuctions: 'Meus Leilões',
   myFirstApp: 'Meu primeiro aplicativo com THF!',
+  openAuctions: 'Leilões Abertos',
   toActivate: 'Ativar'
 };
