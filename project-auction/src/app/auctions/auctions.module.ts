@@ -10,6 +10,7 @@ import { AuctionsService } from './auctions.service';
 import { SharedModule } from '../shared/shared.module';
 import { AddAuctionComponent } from './add-auction/add-auction.component';
 import { OpenAuctionsComponent } from './open-auctions/open-auctions.component';
+import { AuctionRoutingModule } from './auction-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OpenAuctionsComponent } from './open-auctions/open-auctions.component';
   imports: [
     CommonModule,
     SharedModule,
-    ThfModule
+    AuctionRoutingModule,
+    ThfModule,
   ],
   exports: [
     SketchComponent,

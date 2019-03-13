@@ -9,7 +9,6 @@ import { ThfMenuItem } from '@totvs/thf-ui';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public menuAuctions: Array<ThfMenuItem>;
   public literals = {};
 
   constructor(
@@ -19,12 +18,6 @@ export class HomeComponent implements OnInit {
       this.literals = this._literalService.literals;
     }
 
-  ngOnInit() {
-    this.menuAuctions = [
-      {label: this._literalService.literals['myAuctions'], link: '/'},
-      {label: this._literalService.literals['addAuction'], link: '/'},
-      {label: this._literalService.literals['openAuctions'], link: '/'},
-    ];
-  }
+  ngOnInit() { }
 
 }

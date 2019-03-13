@@ -6,9 +6,9 @@ import { OpenAuctionsComponent } from './open-auctions/open-auctions.component';
 import { HomeComponent } from '../home/home.component';
 
 const auctionRoutes: Routes = [
-  { path: 'auction/home', component: HomeComponent },
-  { path: 'auction/add-auction', component: AddAuctionComponent },
-  { path: 'auction/open-auction', component: OpenAuctionsComponent }
+  { path: 'auctions/home', component: HomeComponent },
+  { path: 'auctions/add-auction', component: AddAuctionComponent },
+  { path: 'auctions/open-auction', component: OpenAuctionsComponent }
 ];
 
 @NgModule({

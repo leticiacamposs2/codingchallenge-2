@@ -16,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { AuctionsModule } from './auctions/auctions.module';
 import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
 
 const i18nConfig: ThfI18nConfig = {
   default: {
@@ -38,7 +39,8 @@ const i18nConfig: ThfI18nConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
