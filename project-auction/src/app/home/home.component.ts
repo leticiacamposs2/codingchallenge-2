@@ -1,7 +1,6 @@
 import { LiteralService } from './../i18n/literal.service';
 import { Component, OnInit } from '@angular/core';
 import { AuctionsService } from '../auctions/auctions.service';
-import { ThfMenuItem } from '@totvs/thf-ui';
 
 @Component({
   selector: 'app-home',
