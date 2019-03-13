@@ -21,9 +21,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.menuAuctions = [
-      {label: this._literalService.literals['myAuctions'], link: '/'},
-      {label: this._literalService.literals['addAuction'], link: '/'},
-      {label: this._literalService.literals['openAuctions'], link: '/'},
+      {label: this._literalService.literals['myAuctions'], link: '/auction'},
+      {label: this._literalService.literals['addAuction'], link: '/auction/add-auction'},
+      {label: this._literalService.literals['openAuctions'], link: '/auction/open-auctions'},
     ];
   }
 

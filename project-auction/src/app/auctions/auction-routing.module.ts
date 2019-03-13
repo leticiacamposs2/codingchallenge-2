@@ -4,12 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { OpenAuctionsComponent } from './open-auctions/open-auctions.component';
 import { HomeComponent } from '../home/home.component';
+import { MenuComponent } from './menu/menu.component';
 
 const auctionRoutes: Routes = [
-  { path: 'auctions/home', component: HomeComponent },
-  { path: 'auctions/add-auction', component: AddAuctionComponent },
-  { path: 'auctions/open-auction', component: OpenAuctionsComponent }
-];
+  { path: 'auction', component: MenuComponent, children: [
+      { path: '', component: HomeComponent },
+      { path: 'add-auction', component: AddAuctionComponent },
+      { path: 'open-auctions', component: OpenAuctionsComponent }
+    ]}
+  ];
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(auctionRoutes)],
