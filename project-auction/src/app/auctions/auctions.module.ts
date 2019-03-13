@@ -8,12 +8,16 @@ import { FinishedAuctionsComponent } from './finished-auctions/finished-auctions
 import { ThfModule } from '@totvs/thf-ui';
 import { AuctionsService } from './auctions.service';
 import { SharedModule } from '../shared/shared.module';
+import { AddAuctionComponent } from './add-auction/add-auction.component';
+import { OpenAuctionsComponent } from './open-auctions/open-auctions.component';
 
 @NgModule({
   declarations: [
     SketchComponent,
     MyAuctionsComponent,
-    FinishedAuctionsComponent
+    FinishedAuctionsComponent,
+    AddAuctionComponent,
+    OpenAuctionsComponent
   ],
   imports: [
     CommonModule,
