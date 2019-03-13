@@ -13,10 +13,8 @@ import { generalPt } from './i18n/general-pt';
 import { auctionPt } from './i18n/auction-pt';
 
 import { SharedModule } from './shared/shared.module';
-import { HomeComponent } from './home/home.component';
 import { AuctionsModule } from './auctions/auctions.module';
 import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu.component';
 
 const i18nConfig: ThfI18nConfig = {
   default: {
@@ -38,9 +36,7 @@ const i18nConfig: ThfI18nConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    LoginComponent,
-    MenuComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

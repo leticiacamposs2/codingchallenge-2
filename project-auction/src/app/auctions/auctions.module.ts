@@ -11,6 +11,8 @@ import { SharedModule } from '../shared/shared.module';
 import { AddAuctionComponent } from './add-auction/add-auction.component';
 import { OpenAuctionsComponent } from './open-auctions/open-auctions.component';
 import { AuctionRoutingModule } from './auction-routing.module';
+import { HomeComponent } from '../home/home.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AuctionRoutingModule } from './auction-routing.module';
     MyAuctionsComponent,
     FinishedAuctionsComponent,
     AddAuctionComponent,
-    OpenAuctionsComponent
+    OpenAuctionsComponent,
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 import { ThfMenuItem } from '@totvs/thf-ui';
 import { Component, OnInit } from '@angular/core';
-import { AuctionsService } from '../auctions/auctions.service';
-import { LiteralService } from '../i18n/literal.service';
+import { AuctionsService } from '../auctions.service';
+import { LiteralService } from 'src/app/i18n/literal.service';
 
 @Component({
   selector: 'app-menu',
