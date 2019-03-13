@@ -2,10 +2,6 @@
   <div class="thf-font-title"> {{literals?.name}} </div>
 </div>
 
-<!-- <div class="thf-font-display">
-  <h2 class="subtitle">{{literals?.name}}</h2>
-</div> -->
-
 <div *ngFor="let auction of myAuctions">
   <app-card
     [t-name]="auction.name"

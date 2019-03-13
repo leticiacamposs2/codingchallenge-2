@@ -15,6 +15,7 @@ import { auctionPt } from './i18n/auction-pt';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { AuctionsModule } from './auctions/auctions.module';
+import { LoginComponent } from './login/login.component';
 
 const i18nConfig: ThfI18nConfig = {
   default: {
@@ -36,7 +37,8 @@ const i18nConfig: ThfI18nConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

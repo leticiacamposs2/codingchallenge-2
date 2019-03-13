@@ -1,6 +1,7 @@
 export const generalPt = {
   addAuction: 'Adicionar Leilão',
   auctionName: 'Nome do Leilão',
+  auctionsPortal: 'PORTAL DE LEILÕES',
   bid_type: 'Tipo de Lance',
   bidFixed: 'Lance Fixo :',
   bidFree: 'Lance Livre',

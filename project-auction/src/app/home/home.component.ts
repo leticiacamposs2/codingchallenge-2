@@ -14,16 +14,16 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private _auctionService: AuctionsService,
-    private literalService: LiteralService
+    private _literalService: LiteralService
     ) {
-      this.literals = this.literalService.literals;
+      this.literals = this._literalService.literals;
     }
 
   ngOnInit() {
     this.menuAuctions = [
-      {label: this.literalService.literals['myAuctions'], link: '/'},
-      {label: this.literalService.literals['addAuction'], link: '/'},
-      {label: this.literalService.literals['openAuctions'], link: '/'},
+      {label: this._literalService.literals['myAuctions'], link: '/'},
+      {label: this._literalService.literals['addAuction'], link: '/'},
+      {label: this._literalService.literals['openAuctions'], link: '/'},
     ];
   }
 
