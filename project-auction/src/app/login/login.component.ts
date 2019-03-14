@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
+import { ThfNotificationService } from '@totvs/thf-ui';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _login: LoginService,
-    private _router: Router
+    private _router: Router,
+    private _thfNotification: ThfNotificationService
     ) { }
 
   ngOnInit() {
@@ -20,7 +22,8 @@ export class LoginComponent implements OnInit {
   onLoginMyAuctions(data) {
     this._login.loginUser(data).subscribe(user => {
       this._router.navigate(['auction']);
-      console.log(user);
+    }, error => {
+      this._thfNotification.error('Usuário ou Senha estão inválidos!');
     });
   }
 
