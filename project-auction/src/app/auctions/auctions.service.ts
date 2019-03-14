@@ -15,7 +15,8 @@ export class AuctionsService {
 
   public getSketchsAuctions(): Observable<AuctionsResponse> {
     return this._http.get('/auctions', {
-      status: 0
+      status: 0,
+      owner: localStorage.owner
     });
   }
 

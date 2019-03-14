@@ -17,6 +17,7 @@ export class LoginService {
 
     return this._HttpService.post('/auth/new', newLogin)
       .pipe(tap((res: LoginResponse) => {
+        this.saveToken('owner', newLogin.email);
         this.saveToken('access_token', res.access_token);
         this.saveToken('refresh_token', res.refresh_token);
       }));

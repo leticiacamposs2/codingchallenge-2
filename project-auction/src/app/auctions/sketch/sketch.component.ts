@@ -1,3 +1,4 @@
+import { Auction } from 'src/app/auctions/auction';
 import { LiteralService } from './../../i18n/literal.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +13,7 @@ import { AuctionsResponse } from './../auctions-response';
 
 export class SketchComponent implements OnInit {
 
-  public sketchAuctions: AuctionsResponse;
+  public sketchAuctions;
   public literals = {};
 
   constructor(private _auctionsService: AuctionsService,
@@ -23,8 +24,12 @@ export class SketchComponent implements OnInit {
   ngOnInit() {
     this._auctionsService.getSketchsAuctions()
     .subscribe(res => {
-      this.sketchAuctions = res;
+      this.sketchAuctions = res.auctions;
     });
+  }
+
+  editAuction(event) {
+    console.log(event);
   }
 
 }

@@ -38,7 +38,7 @@ export class AddAuctionComponent implements OnInit {
           Validators.required
         ]
       ],
-      bid_price: [0,
+      base_price: [0,
         [
           Validators.required,
           Validators.min(1)
