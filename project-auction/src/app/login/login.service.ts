@@ -15,7 +15,8 @@ export class LoginService {
     data.email = data.login;
     return this._http.post('/auth/new', data).pipe(
       tap((res: LoginResponse) => {
-        console.log('resposta', res);
+        this.saveToken('acess_token', res.acess_token);
+        this.saveToken('refresh_token', res.refresh_token);
       })
     );
    }
