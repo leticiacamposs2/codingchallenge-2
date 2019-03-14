@@ -6,6 +6,6 @@ export class Login {
 }
 
 export class LoginResponse {
-  public acess_token: string;
+  public access_token: string;
   public refresh_token: string;
 }
