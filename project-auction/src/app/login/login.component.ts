@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   onLoginMyAuctions(data) {
     this._login.loginUser(data).subscribe(user => {
+      this._thfNotification.success('Sucesso ao logar! :)');
       this._router.navigate(['auction']);
     }, error => {
       this._thfNotification.error('Usuário ou Senha estão inválidos!');
