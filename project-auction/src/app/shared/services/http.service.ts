@@ -19,4 +19,8 @@ export class HttpService {
     return this._http.get(this.URL + endpoint, {params});
   }
 
+  public post(endpoint: string, payload: object): Observable<any> {
+    return this._http.post(this.URL + endpoint, {payload});
+  }
+
 }

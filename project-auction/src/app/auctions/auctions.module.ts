@@ -16,7 +16,6 @@ import { AuctionRoutingModule } from './auction-routing.module';
 import { HomeComponent } from '../home/home.component';
 import { MenuComponent } from './menu/menu.component';
 
-
 @NgModule({
   declarations: [
     SketchComponent,

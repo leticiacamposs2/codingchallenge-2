@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpService } from '../shared/services/http.service';
-import { AuctionsResponse } from './auction';
+import { AuctionsResponse, Auction } from './auction';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +20,10 @@ export class AuctionsService {
     return this._http.get('/auctions', {
       status: 1
     });
+  }
+
+  postAuctions(payload: Auction) {
+    return this._http.post('/auctions', payload);
   }
 
 }

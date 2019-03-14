@@ -4,9 +4,9 @@ export class Auction {
   public photo: string;
   public base_price: number;
   public bid_type: number;
-  public bid_step: number;
-  public owner: string;
-  public bids: Array<Bids>;
+  public bid_step?: number;
+  public owner?: string;
+  public bids?: Array<Bids>;
 }
 
 export class Bids {
