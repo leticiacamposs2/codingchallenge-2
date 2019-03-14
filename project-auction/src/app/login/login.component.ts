@@ -8,13 +8,15 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _login: LoginService) { } //injetando a dependencia
+  constructor(private _login: LoginService) { }
 
   ngOnInit() {
   }
 
   onLoginMyAuctions(data) {
-    console.log(data);
+    this._login.loginUser(data).subscribe(user => {
+      console.log(user);
+    });
   }
 
 }

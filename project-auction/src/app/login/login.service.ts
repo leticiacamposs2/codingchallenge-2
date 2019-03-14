@@ -12,7 +12,7 @@ export class LoginService {
 
   loginUser(data: Login): Observable<any> {
     data.email = data.login;
-    return this._http.post('auth/new', data);
+    return this._http.post('/auth/new', data);
    }
 
 }
