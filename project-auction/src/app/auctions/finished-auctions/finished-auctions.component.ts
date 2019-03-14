@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { LiteralService } from 'src/app/i18n/literal.service';
+
 @Component({
   selector: 'app-finished-auctions',
   templateUrl: './finished-auctions.component.html',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinishedAuctionsComponent implements OnInit {
 
-  constructor() { }
+  public literals = {};
+
+  constructor(private _literalService: LiteralService) {
+    this.literals = this._literalService.literalsAuction;
+  }
 
   ngOnInit() {
   }

@@ -1,20 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Auctions } from './auctions';
-
-const URL_API = 'http://localhost:3000';
+import { HttpService } from './../shared/services/http.service';
+import { AuctionsResponse } from './auctions-response';
+import { Auction } from './auction';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuctionsService {
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpService) {}
 
-  public getAllAuctions() {
-    return this._http.get(URL_API + '/auctions');
+  public getSketchsAuctions(): Observable<AuctionsResponse> {
+    return this._http.get('/auctions', {
+      status: 0
+    });
   }
 
+  public getMyAuctions(): Observable<AuctionsResponse> {
+    return this._http.get('/auctions', {
+      status: 1
+    });
+  }
+
+  public postAddAuctions(payload: Auction): Observable<AuctionsResponse> {
+    return this._http.post('/auctions', payload);
+  }
 }
