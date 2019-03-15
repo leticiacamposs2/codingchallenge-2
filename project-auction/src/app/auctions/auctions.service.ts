@@ -42,10 +42,12 @@ export class AuctionsService {
     return this._http.delete('/auctions', '/' + auctionId) ;
   }
 
-  public activateAuction(auctionId: string, payload): Observable<Auction> {
-    return this._http.put('/auctions', `/${auctionId}`, {
+  public activateAuction(auctionId: string): Observable<Auction> {
+    const info = {
       status: 1
-    });
+    };
+
+    return this._http.put('/auctions', `/${auctionId}`, info);
   }
 
 }
