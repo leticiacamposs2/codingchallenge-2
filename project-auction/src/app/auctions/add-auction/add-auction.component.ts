@@ -44,7 +44,10 @@ export class AddAuctionComponent implements OnInit {
 
   //  console.log(this._activateRoute.snapshot.params.id);
     const id = this._activateRoute.snapshot.params.id;
-
+    if(id) {
+        this.auctionsService.getMyAuctionsById(id)
+          .subscribe(response => console.log(response));
+      }
   }
 
   save() {
