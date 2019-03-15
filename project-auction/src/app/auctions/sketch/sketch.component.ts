@@ -1,9 +1,8 @@
-import { Auction } from 'src/app/auctions/auction';
-import { LiteralService } from './../../i18n/literal.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
+import { LiteralService } from './../../i18n/literal.service';
 import { AuctionsService } from '../auctions.service';
-import { AuctionsResponse } from './../auctions-response';
 
 @Component({
   selector: 'app-sketch',
@@ -16,8 +15,11 @@ export class SketchComponent implements OnInit {
   public sketchAuctions;
   public literals = {};
 
-  constructor(private _auctionsService: AuctionsService,
-              private _literalService: LiteralService) {
+  constructor(
+    private router: Router,
+    private _auctionsService: AuctionsService,
+    private _literalService: LiteralService
+    ) {
     this.literals = this._literalService.literalsAuction;
   }
 
@@ -29,6 +31,7 @@ export class SketchComponent implements OnInit {
   }
 
   editAuction(event) {
+    this.router.navigate(['auction/add-auction', event.id]);
     console.log(event);
   }
 

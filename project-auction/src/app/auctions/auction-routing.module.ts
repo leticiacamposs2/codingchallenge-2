@@ -11,6 +11,7 @@ const auctionRoutes: Routes = [
   { path: 'auction', component: MenuComponent, children: [
       { path: '', component: HomeComponent },
       { path: 'add-auction', component: AddAuctionComponent },
+      { path: 'add-auction/:id', component: AddAuctionComponent },
       { path: 'open-auctions', component: OpenAuctionsComponent }
     ]
   }

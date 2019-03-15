@@ -37,6 +37,7 @@ export class CardComponent implements OnInit {
 
   emitAuctionInfo() {
     const data = {
+      id: this.id,
       name: this.name,
       bid_step: this.bid_step,
       bid_type: this.bid_type,
