@@ -28,6 +28,7 @@ export class InterceptorService implements HttpInterceptor {
             refresh_token: localStorage.refresh_token
           }).pipe(
             flatMap(res => {
+              localStorage.setItem('access_token', res.access_token);
               const requestRefresh = req.clone({
                 setHeaders : {
                   'Content-Type': 'application/json',
