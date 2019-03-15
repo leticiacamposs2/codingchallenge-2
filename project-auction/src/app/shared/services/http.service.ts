@@ -28,7 +28,7 @@ export class HttpService {
   }
 
   public delete(endpoint: string, id: string): Observable<any> {
-    return this._http.delete(this.URL_API, endpoint + id);
+    return this._http.delete(this.URL_API + endpoint + id);
   }
 
 }
