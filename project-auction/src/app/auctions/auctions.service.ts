@@ -30,7 +30,7 @@ export class AuctionsService {
     return this._http.post('/auctions', payload);
   }
 
-  public getMyAuctionsById(auctionId: string): Observable<AuctionsResponse> {
+  public getMyAuctionsById(auctionId: string): Observable<Auction> {
     return this._http.get(`/auctions/${auctionId}`);
   }
 

@@ -42,11 +42,18 @@ export class AddAuctionComponent implements OnInit {
       photo: ['']
     });
 
-  //  console.log(this._activateRoute.snapshot.params.id);
     const id = this._activateRoute.snapshot.params.id;
     if(id) {
         this.auctionsService.getMyAuctionsById(id)
-          .subscribe(response => console.log(response));
+          .subscribe(response => {
+            this.formAuction.setValue({
+              name: response.name,
+              base_price: response.base_price,
+              bid_type: response.bid_type,
+              bid_step: response.bid_step,
+              photo: response.photo
+            });
+          });
       }
   }
 
