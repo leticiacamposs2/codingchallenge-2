@@ -47,7 +47,7 @@ export class AuctionsService {
       status: 1
     };
 
-    return this._http.put('/auctions', `/${auctionId}`, info);
+    return this._http.put('/auctions', `/${auctionId}/status`, info);
   }
 
 }

@@ -46,7 +46,9 @@ export class SketchComponent implements OnInit {
           }
         });
     } else if (event.my_action === 'activate') {
-      // Ativiar leilão
+      this._auctionsService.activateAuction(event.id)
+        .subscribe(response => console.log(response));
+      // Ativar leilão
     } else {
       this.router.navigate(['auction/add-auction', event.id]);
     }
