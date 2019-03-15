@@ -23,4 +23,8 @@ export class HttpService {
   public post(endpoint: string, payload: object, params: object = {}): Observable<any> {
     return this._http.post(this.URL_API + endpoint, payload, params);
   }
+
+  public put(endpoint: string, id: string, payload: object): Observable<any> {
+    return this._http.put(this.URL_API + endpoint + id, payload);
+  }
 }

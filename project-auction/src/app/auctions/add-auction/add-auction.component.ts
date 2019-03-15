@@ -19,6 +19,7 @@ export class AddAuctionComponent implements OnInit {
   public bidTypeOptions: Array<ThfSelectOption>;
   public formAuction: FormGroup;
   public newAuction: Auction;
+  private _id: string;
 
   constructor(private literalService: LiteralService,
               private formBuilder: FormBuilder,
@@ -42,9 +43,9 @@ export class AddAuctionComponent implements OnInit {
       photo: ['']
     });
 
-    const id = this._activateRoute.snapshot.params.id;
-    if(id) {
-        this.auctionsService.getMyAuctionsById(id)
+    this._id = this._activateRoute.snapshot.params.id;
+    if (this._id) {
+        this.auctionsService.getMyAuctionsById(this._id)
           .subscribe(response => {
             this.formAuction.setValue({
               name: response.name,
@@ -57,6 +58,7 @@ export class AddAuctionComponent implements OnInit {
       }
   }
 
+  //este save so cria um novo leilao com as informacoes atuais
   save() {
     this.newAuction = this.formAuction.getRawValue();
 

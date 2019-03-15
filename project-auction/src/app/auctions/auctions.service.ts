@@ -38,4 +38,7 @@ export class AuctionsService {
     return this._http.get('/auctions', payload);
   }
 
+  public editAuction(auctionId: string, payload): Observable<Auction> {
+    return '';
+  }
 }
