@@ -5,7 +5,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ThfSelectOption, ThfNotificationService } from '@totvs/thf-ui';
 
 import { LiteralService } from 'src/app/i18n/literal.service';
-import { Auction } from '../auction';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

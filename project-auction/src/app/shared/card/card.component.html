@@ -4,7 +4,8 @@
       t-height="400"
       (t-setting)="emitAuctionInfo()"
       [t-primary-label]="literals['card']['delete']"
-      [t-secondary-label]="literals['card']['active']">
+      [t-secondary-label]="literals['card']['active']"
+      (t-primary-action)=emitAuctionToDelete()>
     <img class="image-card" [src]="photo">
     <div class="container-column">
       <div class="thf-font-text-bold">{{ name }}</div>
@@ -14,4 +15,5 @@
       </div>
     </div>
   </thf-widget>
+
 </div>
