@@ -22,8 +22,8 @@ export class InterceptorService implements HttpInterceptor {
     });
 
     return next.handle(request)
-      .pipe(catchError(err => {
-        if (err.status === HttStatusCodes.UNAUTHORIZED ) {
+      .pipe(catchError(error => {
+        if (error.status === HttStatusCodes.UNAUTHORIZED ) {
           return this.refreshToken({
             refresh_token: localStorage.refresh_token
           }).pipe(

@@ -34,7 +34,7 @@ export class SketchComponent implements OnInit {
     });
   }
 
-  manageEditAuction(event) {
+  manageAuction(event) {
     if (event.my_action === 'delete') {
       this._auctionsService.deleteAuction(event.id)
         .subscribe(response => {
@@ -45,6 +45,8 @@ export class SketchComponent implements OnInit {
             console.log('Oloko bixo! Deu ruim, mas ta de boa!');
           }
         });
+    } else if (event.my_action === 'activate') {
+      // Ativiar leilão
     } else {
       this.router.navigate(['auction/add-auction', event.id]);
     }

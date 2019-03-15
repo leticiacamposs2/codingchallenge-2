@@ -32,8 +32,7 @@ export class CardComponent implements OnInit {
     this.literals = this._literalService.literalsShared;
    }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   formatBid(type) {
     return (type === 1) ? 'Lance Livre' : 'Lance Fixo';

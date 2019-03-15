@@ -41,4 +41,11 @@ export class AuctionsService {
   public deleteAuction(auctionId: string): Observable<Auction> {
     return this._http.delete('/auctions', '/' + auctionId) ;
   }
+
+  public activateAuction(auctionId: string, payload): Observable<Auction> {
+    return this._http.put('/auctions', `/${auctionId}`, {
+      status: 1
+    });
+  }
+
 }

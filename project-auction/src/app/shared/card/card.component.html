@@ -5,7 +5,8 @@
       (t-setting)="emitAuctionInfo('')"
       [t-primary-label]="literals['card']['delete']"
       [t-secondary-label]="literals['card']['active']"
-      (t-primary-action)=emitAuctionToDelete()>
+      (t-primary-action)="emitAuctionInfo('delete')"
+      (t-secondary-action)="emitAuctionInfo('activate')">
     <img class="image-card" [src]="photo">
     <div class="container-column">
       <div class="thf-font-text-bold">{{ name }}</div>
