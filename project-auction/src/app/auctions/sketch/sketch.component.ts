@@ -30,8 +30,8 @@ export class SketchComponent implements OnInit {
     });
   }
 
-  editAuction(event) {
-    this.router.navigate(['auction/add-auction', event.id]);
+  manageEditAuction(event) {
+    //this.router.navigate(['auction/add-auction', event.id]);
     console.log(event);
   }
 

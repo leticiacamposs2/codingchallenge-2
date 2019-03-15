@@ -5,7 +5,7 @@
 </div>
 <div *ngFor="let auction of sketchAuctions">
   <app-card
-    (t-auction-info)="editAuction($event)"
+    (t-auction-info)="manageEditAuction($event)"
     [t-id]="auction._id"
     [t-name]="auction.name"
     [t-base_price]="auction.base_price"
