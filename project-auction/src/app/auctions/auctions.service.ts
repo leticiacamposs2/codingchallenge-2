@@ -31,7 +31,7 @@ export class AuctionsService {
   }
 
   public createAuction(payload): Observable<AuctionsResponse> {
-    return this._http.get('/auctions', payload);
+    return this._http.post('/auctions', payload);
   }
 
   public editAuction(auctionId: string, payload): Observable<Auction> {

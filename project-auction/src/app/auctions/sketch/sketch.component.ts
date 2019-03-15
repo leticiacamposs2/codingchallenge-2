@@ -24,19 +24,29 @@ export class SketchComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAuctions();
+  }
+
+  getAuctions() {
     this._auctionsService.getSketchsAuctions()
-    .subscribe(res => {
-      this.sketchAuctions = res.auctions;
+    .subscribe(response => {
+      this.sketchAuctions = response.auctions;
     });
   }
 
   manageEditAuction(event) {
-    console.log(event);
     if (event.my_action === 'delete') {
       this._auctionsService.deleteAuction(event.id)
-        .subscribe(response => console.log(response));
+        .subscribe(response => {
+          console.log(response);
+        }, error => {
+          if (error.status === 400) {
+            this.getAuctions();
+            console.log('Oloko bixo! Deu ruim, mas ta de boa!');
+          }
+        });
     } else {
-    this.router.navigate(['auction/add-auction', event.id]);
+      this.router.navigate(['auction/add-auction', event.id]);
     }
   }
 
