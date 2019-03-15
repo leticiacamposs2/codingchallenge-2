@@ -21,53 +21,58 @@ export class AddAuctionComponent implements OnInit {
   public newAuction: Auction;
   private _id: string;
 
-  constructor(private literalService: LiteralService,
-              private formBuilder: FormBuilder,
-              private auctionsService: AuctionsService,
-              private thfNotificationService: ThfNotificationService,
-              private _activateRoute: ActivatedRoute) {
+  constructor(
+    private literalService: LiteralService,
+    private formBuilder: FormBuilder,
+    private _auctionsService: AuctionsService,
+    private thfNotificationService: ThfNotificationService,
+    private _activateRoute: ActivatedRoute
+    ) {
     this.literals = this.literalService.literalsAuction;
   }
 
   ngOnInit() {
 
     this.bidTypeOptions = [
-      { label: 'Lance livre', value: 1},
-      { label: 'Lance fixo', value: 2}
+      { label: 'Lance livre', value: 1 },
+      { label: 'Lance fixo', value: 2 }
     ];
     this.formAuction = this.formBuilder.group({
-      name: ['',[Validators.required]],
-      base_price: [0,[Validators.required,Validators.min(1)]],
-      bid_type: [1,[Validators.required]],
+      name: ['', [Validators.required]],
+      base_price: [0, [Validators.required, Validators.min(1)]],
+      bid_type: [1, [Validators.required]],
       bid_step: [0],
       photo: ['']
     });
 
     this._id = this._activateRoute.snapshot.params.id;
     if (this._id) {
-        this.auctionsService.getMyAuctionsById(this._id)
-          .subscribe(response => {
-            this.formAuction.setValue({
-              name: response.name,
-              base_price: response.base_price,
-              bid_type: response.bid_type,
-              bid_step: response.bid_step,
-              photo: response.photo
-            });
+      this._auctionsService.getMyAuctionsById(this._id)
+        .subscribe(response => {
+          this.formAuction.setValue({
+            name: response.name,
+            base_price: response.base_price,
+            bid_type: response.bid_type,
+            bid_step: response.bid_step,
+            photo: response.photo
           });
-      }
+        });
+    }
   }
 
-  //este save so cria um novo leilao com as informacoes atuais
   save() {
-    this.newAuction = this.formAuction.getRawValue();
-
-    this.auctionsService.postAddAuctions(this.newAuction)
-    .subscribe(() => {
-      this.thfNotificationService.success('Leilão criado com sucesso!');
-    },
-      err => this.thfNotificationService.error(err)
-    );
+    if (this._id) {
+      this._auctionsService.editAuction(this._id, this.formAuction.value)
+        .subscribe(response => console.log(response));
+    } else {
+      this.newAuction = this.formAuction.getRawValue();
+      this._auctionsService.postAddAuctions(this.newAuction)
+        .subscribe(() => {
+          this.thfNotificationService.success('Leilão criado com sucesso!');
+        },
+          err => this.thfNotificationService.error(err)
+        );
+    }
   }
 
   isFormValid() {
