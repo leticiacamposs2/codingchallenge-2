@@ -6,7 +6,7 @@ import { ThfSelectOption, ThfNotificationService } from '@totvs/thf-ui';
 
 import { LiteralService } from 'src/app/i18n/literal.service';
 import { Auction } from '../auction';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-auction',
@@ -18,7 +18,6 @@ export class AddAuctionComponent implements OnInit {
   public literals = {};
   public bidTypeOptions: Array<ThfSelectOption>;
   public formAuction: FormGroup;
-  public newAuction: Auction;
   private _id: string;
 
   constructor(
@@ -26,7 +25,8 @@ export class AddAuctionComponent implements OnInit {
     private formBuilder: FormBuilder,
     private _auctionsService: AuctionsService,
     private thfNotificationService: ThfNotificationService,
-    private _activateRoute: ActivatedRoute
+    private _activateRoute: ActivatedRoute,
+    private _router: Router
     ) {
     this.literals = this.literalService.literalsAuction;
   }
@@ -63,10 +63,9 @@ export class AddAuctionComponent implements OnInit {
   save() {
     if (this._id) {
       this._auctionsService.editAuction(this._id, this.formAuction.value)
-        .subscribe(response => console.log(response));
+        .subscribe(response => this._router.navigate(['/auction']));
     } else {
-      this.newAuction = this.formAuction.getRawValue();
-      this._auctionsService.postAddAuctions(this.newAuction)
+      this._auctionsService.createAuction(this.formAuction.value)
         .subscribe(() => {
           this.thfNotificationService.success('Leilão criado com sucesso!');
         },

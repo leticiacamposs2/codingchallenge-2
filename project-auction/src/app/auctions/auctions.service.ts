@@ -26,10 +26,6 @@ export class AuctionsService {
     });
   }
 
-  public postAddAuctions(payload: Auction): Observable<AuctionsResponse> {
-    return this._http.post('/auctions', payload);
-  }
-
   public getMyAuctionsById(auctionId: string): Observable<Auction> {
     return this._http.get(`/auctions/${auctionId}`);
   }
