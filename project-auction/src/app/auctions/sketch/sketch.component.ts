@@ -31,8 +31,12 @@ export class SketchComponent implements OnInit {
   }
 
   manageEditAuction(event) {
-    //this.router.navigate(['auction/add-auction', event.id]);
     console.log(event);
+    if (event.my_action === 'delete') {
+      this._auctionsService.deleteAuction(event.id);
+    } else {
+    this.router.navigate(['auction/add-auction', event.id]);
+    }
   }
 
 }

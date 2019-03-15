@@ -37,4 +37,8 @@ export class AuctionsService {
   public editAuction(auctionId: string, payload): Observable<Auction> {
     return this._http.put('/auctions', `/${auctionId}`, payload);
   }
+
+  public deleteAuction(auctionId: string): Observable<Auction> {
+    return this._http.delete('/auctions', '/' + auctionId) ;
+  }
 }
