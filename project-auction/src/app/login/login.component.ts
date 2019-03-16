@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       this._thfNotification.success('Sucesso ao logar! :)');
       this._router.navigate(['auction']);
     }, error => {
+
       this._thfNotification.error('Usuário ou Senha estão inválidos!');
     });
   }

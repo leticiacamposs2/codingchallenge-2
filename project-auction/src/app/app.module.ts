@@ -16,6 +16,7 @@ import { auctionPt } from './i18n/auction-pt';
 
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './login/login.component';
+import { InterceptorModule } from './interceptor/interceptor.module';
 
 const i18nConfig: ThfI18nConfig = {
   default: {
@@ -42,6 +43,7 @@ const i18nConfig: ThfI18nConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    InterceptorModule,
     ThfModule,
     ThfI18nModule.config(i18nConfig),
     ThfPageLoginModule,

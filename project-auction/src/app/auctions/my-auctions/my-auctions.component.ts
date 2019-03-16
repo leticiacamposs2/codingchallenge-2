@@ -9,7 +9,7 @@ import { AuctionsService } from '../auctions.service';
   styleUrls: ['./my-auctions.component.scss']
 })
 export class MyAuctionsComponent implements OnInit {
-  public myAuctions: AuctionsResponse;
+  public myAuctions;
   public literals = {};
 
   constructor(
@@ -22,7 +22,7 @@ export class MyAuctionsComponent implements OnInit {
   ngOnInit() {
 
     this._auctionsService.getMyAuctions().subscribe( response => {
-      this.myAuctions = response;
+      this.myAuctions = response.auctions;
 
     });
   }
